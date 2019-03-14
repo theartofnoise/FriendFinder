@@ -17,11 +17,13 @@ app.post("/api/friends",function(req, res) {
         for (var i = 0; i < friendsArr.length; i++) {
             totDiff = 0;
             for (var j = 0; j < newFriend.scores.length; j++) {
+              //returns the absolute value and adds to difference
                 totDiff += Math.abs(friendsArr[i].scores[j] - newFriend.scores[j]);
-            } //for j
+            } 
+            //pushes the total difference to diffArray
             diffArry.push(totDiff);
-        } //for i
-
+        } 
+        // grabs the lowest number in the array
         var match = diffArry.indexOf(Math.min(...diffArry));
     // function compare(fake, friendsArr[i].scores) {      
     // }
