@@ -1,51 +1,60 @@
-// var express = require("express");
-// var path = require("path");
+
 
 var friendsArr = require("../data/friends");
-// var app = express();
-// var PORT = process.env.PORT||3000;
 
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.json());
-// app.use(express.static('public'))
-// app.use(function(req,res,next)
-// {
-//  res.header("Access-Control-Allow-Origin","*");
-//  res.header("Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type, Accept");
-//  next();
-// });
 
-module.exports = function apiRoutes(app) {
+module.exports = function apiRoutes(app, fs) {
 app.post("/api/friends",function(req, res) {
-  var newFriend = req.body;
+  // var fake = [5,1,4,3,5,1,2,5,4,1];
+  // var newFriend = req.body;
+  for (i=0;i<friendsArr.length;i++){
+    console.log("length: "+friendsArr[i].scores);
+  }
+    var totDiff;
+        var diffArry = [];
+        var newFriend = req.body;
+
+        for (var i = 0; i < friendsArr.length; i++) {
+            totDiff = 0;
+            for (var j = 0; j < newFriend.scores.length; j++) {
+                totDiff += Math.abs(friendsArr[i].scores[j] - newFriend.scores[j]);
+            } //for j
+            diffArry.push(totDiff);
+        } //for i
+
+        var match = diffArry.indexOf(Math.min(...diffArry));
+    // function compare(fake, friendsArr[i].scores) {      
+    // }
+  // for (j=0;j<friendsArr[i].scores.length;j++){
+  //   // friendsArr[i].scores
+  // }
+  console.log(newFriend);
+
   friendsArr.push(newFriend);
-  console.log("you work...");
+  
+  res.json(friendsArr[match].name);
 });
   
 
   app.get("/api/friends", function(req, res) {
-  return res.json(friendsArr);
+  return res.json(JSON.stringify(friendsArr));
 });
 
 
-app.get("/api/friends/:id", function(req, res) {
-  var chosen = req.params.id;
+// app.get("/api/friends/:id", function(req, res) {
+//   var chosen = req.params.id;
 
-  console.log(chosen);
+//   console.log(chosen);
 
-  friendsArr.find(function (friend){
-    if (chosen === friend.id) {
-       return res.json(friend);
-    }
-  })
+//   friendsArr.find(function (friend){
+//     if (chosen === friend.id) {
+//        return res.json(friend);
+//     }
+//   })
 
-  // for (var i = 0; i < friendsArr.length; i++) {
-  //   if (chosen === friendsArr[i].id) {
-  //     return res.json(friendsArr[i]);
-  //   }
-  // }
-
-  return res.json(false);
   
-});
+
+//   return res.json(false);
+  
+// });
 };

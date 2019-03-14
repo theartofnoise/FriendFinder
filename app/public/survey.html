@@ -46,21 +46,122 @@
           </div>
           <hr />
           <h2>Questionaire</h2>
-          <h4>Blaaaaaaaahhhh</h4>
           <form>
-          <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Select an option
-                      </button>
-                <div id="q1" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" value="1">1 (definetly not)</a>
-                  <a class="dropdown-item" value="2">2</a>
-                  <a class="dropdown-item" value="3">3</a>
-                  <a class="dropdown-item" value="4">4</a>
-                  <a class="dropdown-item" value="5">5 (definetly)</a>
+            <h4>Do you like physical activities?</h4>
+            <div class="form-group">
+              <select class="form-control" id="q7">
+                <option>Choose your answer</option>
+                <option value="1" >1 (Definetly Not)</option>
+                <option value="2" >2</option>
+                <option value="3" >3</option>
+                <option value="4" >4</option>
+                    <option value="5" >5 (Absolutly)</option>
+                  </select>                
+              </div>
+              <h4>Do you like Javascript programming laguage?</h4>
+              <div class="form-group">
+                  <select class="form-control" id="q8">
+                    <option>Choose your answer</option>
+                    <option value="1" >1 (Definetly Not)</option>
+                    <option value="2" >2</option>
+                    <option value="3" >3</option>
+                    <option value="4" >4</option>
+                    <option value="5" >5 (Absolutly)</option>
+                  </select>                
                 </div>
-              </div><br><hr><br>
-              <input class="btn btn-secondary btn-block"  data-toggle="modal" data-target="#exampleModal" type="submit" id="submit" value="Submit">
+                <h4>Do you think this Friend Finder app was easy to make?</h4>
+                <div class="form-group">
+                  <select class="form-control" id="q9">
+                    <option>Choose your answer</option>
+                    <option value="1" >1 (Definetly Not)</option>
+                    <option value="2" >2</option>
+                    <option value="3" >3</option>
+                    <option value="4" >4</option>
+                    <option value="5" >5 (Absolutly)</option>
+                  </select>                
+              </div>
+              <h4>What's your favorite number between 1 and 5?</h4>
+              <div class="form-group">
+                <select class="form-control" id="q10">
+                  <option>Choose your answer</option>
+                  <option value="1" >1 (Definetly Not)</option>
+                  <option value="2" >2</option>
+                    <option value="3" >3</option>
+                    <option value="4" >4</option>
+                    <option value="5" >5 (Absolutly)</option>
+                  </select>                
+                </div>
+                <h4>Do you like to sing Karaoke?</h4>
+                <div class="form-group">
+                    <select class="form-control" id="q6">
+                      <option>Choose your answer</option>
+                      <option value="1" >1 (Definetly Not)</option>
+                      <option value="2" >2</option>
+                      <option value="3" >3</option>
+                      <option value="4" >4</option>
+                      <option value="5" >5 (Absolutly)</option>
+                    </select>                
+                </div>
+              <h4>Do you like Pina Coladas?</h4>
+              <div class="form-group">
+                <select class="form-control" id="q1">
+                    <option>Choose your answer</option>
+                    <option value="1" >1 (Definetly Not)</option>
+                    <option value="2" >2</option>
+                    <option value="3" >3</option>
+                    <option value="4" >4</option>
+                    <option value="5" >5 (Absolutly)</option>
+                  </select>                
+              </div>
+              <h4>Do you appreciate getting caught in the rain?</h4>
+              <div class="form-group">
+                  <select class="form-control" id="q1">
+                    <option>Choose your answer</option>
+                    <option value="1" >1 (Definetly Not)</option>
+                    <option value="2" >2</option>
+                    <option value="3" >3</option>
+                    <option value="4" >4</option>
+                    <option value="5" >5 (Absolutly)</option>
+                  </select>                
+              </div>
+              <h4>Are you into Yoga?</h4>
+              <div class="form-group">
+                <select class="form-control" id="q1">
+                    <option>Choose your answer</option>
+                    <option value="1" >1 (Definetly Not)</option>
+                    <option value="2" >2</option>
+                    <option value="3" >3</option>
+                    <option value="4" >4</option>
+                    <option value="5" >5 (Absolutly)</option>
+                  </select>                
+              </div>
+              <h4>Are you into Champagne?</h4>
+              <div class="form-group">
+                  <select class="form-control" id="q2">
+                    <option>Choose your answer</option>
+                    <option value="1" >1 (Definetly Not)</option>
+                    <option value="2" >2</option>
+                    <option value="3" >3</option>
+                    <option value="4" >4</option>
+                    <option value="5" >5 (Absolutly)</option>
+                  </select>                
+              </div>
+              <h4>Do you like making love at midnight?</h4>
+              <div class="form-group">
+                  <select class="form-control" id="q3">
+                    <option>Choose your answer</option>
+                    <option value="1" >1 (Definetly Not)</option>
+                    <option value="2" >2</option>
+                    <option value="3" >3</option>
+                    <option value="4" >4</option>
+                    <option value="5" >5 (Absolutly)</option>
+                  </select>                
+              </div>
+              
+
+              <br><hr><br>
+              <!-- ubmit button  -->
+              <input class="btn btn-secondary btn-block" type="submit" id="submit" value="Submit">
             </form>
             <br>
               <footer class="footer">
@@ -101,22 +202,35 @@
 
 <script>
   
-    $("#submit").on("click", function(){
+    $("#submit").on("click", function(friendsArr){
         event.preventDefault();
-        var userData = [{
+        var userData = {
             "name":$("#userName").val(),
             "photo":$("#userPic").val(),
-            "scores":[$("#q1").val()]
-        }];
-        $("#exampleModalLabel").prepend(JSON.stringify(userData[0].name).toString().replace(/"/g, ""));
+            "scores":[$("#q1").val(),
+                      $("#q2").val(),
+                      $("#q3").val(),
+                      $("#q4").val(),
+                      $("#q5").val(),
+                      $("#q6").val(),
+                      $("#q7").val(),
+                      $("#q8").val(),
+                      $("#q9").val(),
+                      $("#q10").val(),]
+        };
+        $("#exampleModalLabel").prepend(JSON.stringify(userData.name).toString().replace(/"/g, ""));
         console.log(userData);
+        // $.get("/api/friends", function(data) {
+          
+        // });
         $.post("/api/friends", userData, function(data) {
-          
-          
+          // console.log(data);
+          $("#modalData").text(JSON.stringify(data));
+          $("#exampleModal").modal("toggle");
           
         });
-        $("#modalData").text(JSON.stringify(userData));
-        // console.log(friendsArr);
+        
+        
     })
 </script>
 
